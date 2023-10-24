@@ -1,1 +1,2 @@
-print("Mi primer programa python aarriba")
+saludo=input("¿Como te llamas?\n")
+print("Hola "+saludo)
