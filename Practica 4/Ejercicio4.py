@@ -3,7 +3,7 @@ for i in range(3):
     number = int(input("Escribe el " + str(i + 1) + "º número: "))
     numbers.append(number)#Se agrega el contenido de la variable number a la lista numbers
 
-if numbers[0]>numbers[1] and numbers[0]>numbers[2]:
+if numbers[0]>numbers[1] and numbers[0]>numbers[2]:#conjunto de if´s que averiguará el orden de los 3 números introducidos
     if numbers[1]>numbers[2]:
         print(numbers[0],numbers[1],numbers[2])
     else:
