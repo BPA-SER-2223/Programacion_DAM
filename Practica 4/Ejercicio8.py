@@ -1,4 +1,3 @@
-i=0
 days=[1,2,3,4,5,6,7]#Inicializamos un array que contendrá el número de dias que hay en una semana
 week=["Lunes","Martes","Miercoles","Jueves","Viernes","Sabado","Domingo"]#Inicializamos un array que contendrá los dias de la semana
 

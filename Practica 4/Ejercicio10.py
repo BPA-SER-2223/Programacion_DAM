@@ -1,6 +1,5 @@
 import random
 
-i=0
 random=random.randint(1,100)#Inicializamos una variable que guardará un número aleatorio del 1 al 100
 trys=0#Inicializamos una variable que se utilizará par contar los intentos del usuario para adivinar el número aleatorio
 print("Hay que adivinar un número del 1 al 100. Tienes 10 intentos.")#Mensaje

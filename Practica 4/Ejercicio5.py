@@ -10,4 +10,3 @@ elif side_A==side_B or side_A==side_C or side_B==side_C:#If que buscará dos lad
     print("Es un triángulo isósceles")
 else:
     print("Es un triángulo escaleno")
-

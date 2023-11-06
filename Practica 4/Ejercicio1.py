@@ -5,4 +5,3 @@ if name=="pepe" and password=="adsads":##Este if comparará el contenido de la d
     print("Has entrado al sistema")#Si coinciden se mostrará este mensaje por pantalla
 else:
     print("Error")#Si no coinciden se mostrará este mensaje por pantalla
-

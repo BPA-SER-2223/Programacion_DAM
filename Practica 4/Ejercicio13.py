@@ -1,4 +1,3 @@
-i=0
 cont=0
 num=int(input("Introduce un número.\n"))#Inicializamos una variable que guardará el número introducido por teclado
 

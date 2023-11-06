@@ -1,4 +1,3 @@
-i=0
 result=1#inicializamos un variable de tipo número que más adelante guardará el resultado de la operación
 
 base=int(input("Escribe la base de la operación: "))#Variable en la cual se guardará la base de la operación

@@ -1,4 +1,3 @@
-i=0
 number=[1,2,3,4,5,6,7,8,9,10,11,12]#Inicializamos un array con el numero de meses que tiene un año
 month=["Enero tiene 31 días","Febrero tiene 28 días","Marzo tiene 31 días","Abril tiene 30 días","Mayo tiene 31 días","Junio tiene 30 días","Julio tiene 31 días","Agosto tiene 31 días","Septiembre tiene 30 días","Octubre tiene 31 días","Noviembre tiene 30 días","Diciembre tiene 31 días"]#Inicializamos un array con los dias que tiene cada mes de un año
 

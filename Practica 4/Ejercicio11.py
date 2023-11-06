@@ -1,4 +1,3 @@
-i=0
 greater=0
 less =0
 cero=0

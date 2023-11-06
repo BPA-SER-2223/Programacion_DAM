@@ -1,4 +1,3 @@
-i=0
 dice=[6,5,4,3,2,1]#Inicializamos una array el cual contendrá los posibles números del dado
 contrary=["uno","dos","tres","cuatro","cinco","seis"]#Inicializamos un array que contendrá los contrarios del array llamado "dice" pero en palabras
 
