@@ -6,7 +6,7 @@ public class Usuario {//Creamos una clase llamada "Usuario"
     private String email;//Creamos el atributo email
     private Integer password;//Creamos el atributo password
 
-    public Usuario(String n, String s, Integer c, String a, String e, Integer p) {//Aqui creamos el contructor, asociando los atributos a variables
+    public Usuario(String n, String s, Integer c, String a, String e, Integer p) {//Aqui creamos el constructor, asociando los atributos a variables
         this.name = n;
         this.second_name = s;
         this.postal_code = c;
