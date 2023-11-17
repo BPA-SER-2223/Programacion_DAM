@@ -5,16 +5,21 @@ public class Usuario {//Creamos una clase llamada "Usuario"
     private String address;//Creamos el atributo address
     private String email;//Creamos el atributo email
     private Integer password;//Creamos el atributo password
-    public Usuario(String n,String s,Integer c,String a,String e,Integer p){//Aqui creamos el contructor, asociando los atributos a variables
-        this.name=n;
-        this.second_name=s;
-        this.postal_code=c;
-        this.address=a;
-        this.email=e;
-        this.password=p;
+
+    public Usuario(String n, String s, Integer c, String a, String e, Integer p) {//Aqui creamos el constructor, asociando los atributos a variables
+        this.name = n;
+        this.second_name = s;
+        this.postal_code = c;
+        this.address = a;
+        this.email = e;
+        this.password = p;
     }
-    public String getName(){return this.name;}//Método para devolver el contenido de la variable
-    public void setName(String n){//Método para modificar el contenido de la variable
+
+    public String getName() {
+        return this.name;
+    }//Método para devolver el contenido de la variable
+
+    public void setName(String n) {//Método para modificar el contenido de la variable
         this.name = n;
     }
 
@@ -58,21 +63,27 @@ public class Usuario {//Creamos una clase llamada "Usuario"
         this.password = password;
     }
 
-    public void check(String name, Integer pass){//El método check comparará el usuario y la contraseña de los registros con los introducidos por el usuario
-        if (this.name.equals(name) && this.password.equals(pass)){//Si coinciden
+    public boolean check(String name, Integer pass) {//El método check comparará el usuario y la contraseña de los registros con los introducidos por el usuario
+        boolean res = Boolean.FALSE;
+        if (this.name.equals(name) && this.password.equals(pass)) {//Si coinciden
             System.out.println("Correcto");//Imprimirá en pantalla este mensaje
+            res = Boolean.TRUE;
 
-        }else{
+        } else {
             System.out.println("Error");//Si no, este
         }
+        return res;
     }
-    public void check2(String name, Integer pass) {//El método check comparará el usuario y la contraseña de los registros con los introducidos por el usuario
-        if (this.name.equals(name) && this.password.equals(pass)){//Si coinciden
-            System.out.println("Correcto");//Imprimirá en pantalla este mensaje
 
-        }else{
+    public boolean check2(String name, Integer pass) {//El método check comparará el usuario y la contraseña de los registros con los introducidos por el usuario
+        boolean res = Boolean.FALSE;
+        if (this.name.equals(name) && this.password.equals(pass)) {//Si coinciden
+            System.out.println("Correcto");//Imprimirá en pantalla este mensaje
+            res = Boolean.TRUE;
+
+        } else {
             System.out.println("Error");//Si no, este
         }
-
+        return res;
     }
 }
