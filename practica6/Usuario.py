@@ -23,11 +23,7 @@ class Usuario:
         return self.password
 
     def check(self, user, pass_):
-        print(user)
-        print(self.name)
-        print(pass_)
-        print(self.password)
-        if user == self.name and pass_ == self.password:
+        if self.name == user and self.password == pass_:
             print("Correcto")
         else:
             print("Error")
