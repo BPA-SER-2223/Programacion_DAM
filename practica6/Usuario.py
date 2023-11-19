@@ -10,7 +10,6 @@ class Usuario:
 
     def findname(self):
         return self.name
-
     def findsecond_name(self):
         return self.second_name
     def findaddress(self):
@@ -21,6 +20,8 @@ class Usuario:
         return self.email
     def findpassword(self):
         return self.password
+    def mostrarUsuario(self):
+        return str(self.name)+" con email "+str(self.email)+" vive en "+str(self.address)+" con código postal "+str(self.postal_code)
 
     def check(self, user, pass_):
         if self.name == user and self.password == pass_:
