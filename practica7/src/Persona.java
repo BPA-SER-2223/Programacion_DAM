@@ -1,4 +1,4 @@
-public class Persona {
+public class Persona implements Humano{
     private String dni;
     private String nombre;
     private Integer edad;
