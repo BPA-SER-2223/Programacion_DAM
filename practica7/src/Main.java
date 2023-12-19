@@ -4,10 +4,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-
         System.out.println("Elige una opción:\n\t1.Consultar datos de personas a traves del DNI.\n\t2.Registro.");
-
-
 
         Area area1 = new Area(
                 "Quirófano",
@@ -31,7 +28,7 @@ public class Main {
 
         System.out.println(area1.compareTo(area2));
 
-        LocalDate dateMedic1 = LocalDate.of(2000,12,3);
+        LocalDate dateMedic = LocalDate.of(2000,12,3);
 
         Direccion direccionMedic = new Direccion("String",
                 32,
@@ -44,7 +41,7 @@ public class Main {
                 "Antonio Perez",
                 23,
                 "Masculino",
-                3006.8,
+                2800.5,
                 LocalDate.of(2000,12,3),
                 area1,
                 direccionMedic

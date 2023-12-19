@@ -27,17 +27,11 @@ public class Medico extends Persona {
         return this.fecha.compareTo(LocalDate.now())*-1;
     }
 
-    public Double getSueldo_neto(){
-        double sueldo_anual=this.sueldo*12;
-        double sueldo_neto=0;
+    public Double getsueldo(Double sueldo_anual){
+        sueldo_anual=this.sueldo*12;
 
-        if(sueldo_anual<=12450){sueldo_neto=sueldo_anual-(this.sueldo*19/100);}
-        if(sueldo_anual>=12450 && sueldo_anual<=20199){sueldo_neto=sueldo_anual-(this.sueldo*24/100);}
-        if(sueldo_anual>=20200 && sueldo_anual<=35199){sueldo_neto=sueldo_anual-(this.sueldo*30/100);}
-        if(sueldo_anual>=35200 && sueldo_anual<=59999){sueldo_neto=sueldo_anual-(this.sueldo*37/100);}
-        if(sueldo_anual>=60.000 && sueldo_anual<=299.999){sueldo_neto=sueldo_anual-(this.sueldo*45/100);}
-        if(sueldo_anual>=300.000){sueldo_neto=sueldo_anual-(this.sueldo*47/100);}
-
-        return sueldo_neto;
+        if(sueldo_anual>=12.450 && sueldo_anual<=20.200){
+            this.sueldo-();
+        }
     }
 }
