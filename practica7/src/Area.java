@@ -22,19 +22,19 @@ public class Area implements Comparable<Area> {
     public Integer getIdentificador() {
         return this.identificador;
     }
-    public void setidentificador_a(Integer identificador_a) {
+    public void setIdentificador(Integer identificador_a) {
         this.identificador = identificador_a;
     }
-    public Integer getplanta_a() {
+    public Integer getPlanta() {
         return this.planta;
     }
-    public void setplanta_a(Integer planta_a) {
+    public void setPlanta(Integer planta_a) {
         this.planta = planta_a;
     }
-    public String gethospital_a() {
+    public String getHospital() {
         return this.hospital;
     }
-    public void sethospital_a(String hospital_a) {
+    public void setHospital(String hospital_a) {
         this.hospital = hospital_a;
     }
 
