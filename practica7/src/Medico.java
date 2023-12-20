@@ -31,12 +31,14 @@ public class Medico extends Persona {
         double sueldo_anual=this.sueldo*12;
         double sueldo_neto=0;
 
-        if(sueldo_anual<=12450){sueldo_neto=sueldo_anual-(this.sueldo*19/100);}
-        if(sueldo_anual>=12450 && sueldo_anual<=20199){sueldo_neto=sueldo_anual-(this.sueldo*24/100);}
-        if(sueldo_anual>=20200 && sueldo_anual<=35199){sueldo_neto=sueldo_anual-(this.sueldo*30/100);}
-        if(sueldo_anual>=35200 && sueldo_anual<=59999){sueldo_neto=sueldo_anual-(this.sueldo*37/100);}
-        if(sueldo_anual>=60.000 && sueldo_anual<=299.999){sueldo_neto=sueldo_anual-(this.sueldo*45/100);}
-        if(sueldo_anual>=300.000){sueldo_neto=sueldo_anual-(this.sueldo*47/100);}
+        if(sueldo_anual<=12449){sueldo_neto=(this.sueldo-(this.sueldo*9.5/100));}
+        if(sueldo_anual>=12450 && sueldo_anual<=20199){sueldo_neto=(this.sueldo-(this.sueldo*12/100));}
+        if(sueldo_anual>=20200 && sueldo_anual<=35199){sueldo_neto=(this.sueldo-(this.sueldo*15/100));}
+        if(sueldo_anual>=35200 && sueldo_anual<=59999){sueldo_neto=(this.sueldo-(this.sueldo*18.5/100));}
+        if(sueldo_anual>=60000 && sueldo_anual<=299999){sueldo_neto=(this.sueldo-(this.sueldo*22.5/100));}
+        if(sueldo_anual>=300000){
+            sueldo_neto=(this.sueldo-(this.sueldo*24.5/100));
+        }
 
         return sueldo_neto;
     }

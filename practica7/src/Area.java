@@ -1,7 +1,7 @@
 import java.sql.Array;
 import java.util.Scanner;
 
-public class Area implements Comparable<Area> {
+public class Area{
     private String nombre;
     private Integer identificador;
     private Integer planta;
@@ -41,14 +41,21 @@ public class Area implements Comparable<Area> {
     public Integer getNumMedicos() {
         return this.num_medicos;
     }
-    @Override
-    public int compareTo(Area area_nueva) {
-        return this.getNumMedicos().compareTo(area_nueva.getNumMedicos());
+    public String compareTo(Area area_nueva) {
+        int num=this.getNumMedicos().compareTo(area_nueva.getNumMedicos());
+        String men=null;
+
+        if(num==-1){
+            men="El area2 tiene más médicos";
+        }else{
+            men="El area1 tiene más médicos";
+        }
+        return men;
     }
 
-    public int comparableMultipleAreas(Area a1, Area a2) {
-        return 0;
-    }
+    //public int comparableMultipleAreas(Area a1, Area a2) {
+    //    return 0;
+    //}
 
 //    static Area area1 = new Area("Quirófano",1234,1,"Santa lucía",9);
 //    static Area area2 = new Area("Habitaciones",5678,2,"Santa lucía",11);
