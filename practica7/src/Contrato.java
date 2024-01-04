@@ -31,10 +31,11 @@ public class Contrato {
 
     @Override
     public String toString() {
-        return "Contrato\n\t" +
-                "fecha_creacion=" + fecha_creacion +
-                " \n\tdatos_medicos='" + datos_medicos + '\'' +
-                " \n\thospitales=" + hospitales +
-                '}'+"\n\n";
+        return "\nContratos\n\t" +
+                "fecha de creacion=" + fecha_creacion +
+                "\n\tdatos medicos=" + datos_medicos + '\n' +
+                "\t---------------" +
+                "\n\t" + hospitales +
+                "\n\n";
     }
 }

@@ -22,4 +22,13 @@ public class Direccion {
     public void setcodigo_postal_d(String localidad_d){this.localidad = localidad_d;}
     public String getprovinvia_d(){return this.provincia;}
     public void setlocalidad_d(String localidad_d){this.localidad = localidad_d;}
+
+    @Override
+    public String toString() {
+        return  "\n\t\tcalle=" + calle + '\n' +
+                "\t\tnumero=" + numero + '\n' +
+                "\t\tcodigo_postal=" + codigo_postal + '\n' +
+                "\t\tlocalidad=" + localidad + '\n' +
+                "\t\tprovincia=" + provincia;
+    }
 }
