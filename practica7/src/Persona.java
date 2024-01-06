@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Persona implements Humano {
     private String dni;
@@ -47,28 +48,28 @@ public class Persona implements Humano {
 
     @Override
     public String toString() {
-        return "Persona{" +
-                "dni='" + dni + '\'' +
-                ", nombre='" + nombre + '\'' +
-                ", edad=" + edad +
-                ", sexo='" + sexo + '\'' +
-                '}';
+        return "---------------\nPersona\n---------------\n" +
+                "\tdni: " + dni + '\n' +
+                "\tnombre: " + nombre + '\n' +
+                "\tedad: " + edad + '\n' +
+                "\tsexo: " + sexo + '\n';
     }
 
-    public void Information_Personas(String inicio_2, String[] dni_personas, ArrayList<Persona> list_Personas) {
-        int no=0;
-        for (int i = 0; i < dni_personas.length; i++) {
-            if (inicio_2.equals(dni_personas[i])) {
+    Scanner new_Personas = new Scanner(System.in);
 
-                System.out.println(list_Personas.get(i));
-                no++;
-                break;
-            }
-            if (no==0){
+    public void creation_persona(ArrayList<Persona> list_Personas){
+        System.out.print("Introduce el dni de la persona: ");
+        String dni = new_Personas.next();
+        System.out.print("Introduce el nombre de la persona: ");
+        String nombre = new_Personas.next();
+        System.out.print("Introduce la edad de la persona: ");
+        int edad = new_Personas.nextInt();
+        System.out.print("Introduce el sexo de la persona: ");
+        String sexo = new_Personas.next();
 
-                System.out.println("No existe la persona asociada al dni introducido.");
-                break;
-            }
-        }
+        Persona persona2=new Persona(dni,nombre,edad,sexo);
+
+        list_Personas.add(persona2);
+        System.out.println("¡Persona creada!\n");
     }
 }

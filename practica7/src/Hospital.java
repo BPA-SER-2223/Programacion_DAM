@@ -21,13 +21,14 @@ public class Hospital {
 
     @Override
     public String toString() {
-        return  "\n\t\tnombre=" + nombre + "\n" +
-                "\t\tcif=" + cif + "\n\n" +
-                "\t--direccion=" + direccion;
+        return  "\t--hospital:" +
+                "\n\t\tnombre: " + nombre + "\n" +
+                "\t\tcif: " + cif + "\n\n" +
+                "\t--direccion: " + direccion;
     }
 
     Scanner new_Hospital = new Scanner(System.in);
-    public void creation_Hospital(ArrayList<Direccion> list_Direcciones, ArrayList<Hospital> list_Hospitales){
+    public void creation_Hospital(ArrayList<Direccion> list_Direcciones_Hospitales, ArrayList<Hospital> list_Hospitales){
         System.out.print("Escribe el nombre del hospital:");
         String nombre=new_Hospital.next();
         System.out.print("Escribe el cif del hospital:");
@@ -35,11 +36,11 @@ public class Hospital {
 
         System.out.println("Elige una de estas direcciones para el hospital: ");
         for(int i=0;i<list_Hospitales.size();i++) {
-            System.out.println("\t"+(i+1)+"-"+list_Direcciones.get(i).getcalle_d());
+            System.out.println("\t"+(i+1)+"-"+list_Direcciones_Hospitales.get(i).getcalle_d());
         }
         int j=new_Hospital.nextInt();
 
-        Hospital hospital = new Hospital(nombre,cif,list_Direcciones.get(j-1));
+        Hospital hospital = new Hospital(nombre,cif,list_Direcciones_Hospitales.get(j-1));
         list_Hospitales.add(hospital);
         System.out.println("¡Hospital creado!\n");
     }

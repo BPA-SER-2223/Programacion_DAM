@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-
         ///////////////////////////////Direcciones///////////////////////////////
 
         Direccion direccionMedic = new Direccion(
@@ -51,18 +50,18 @@ public class Main {
                 9);
 
         Area area2 = new Area(
-                "Habitaciones",
+                "Habitaciones-planta2",
                 5678,
                 2,
                 hospital2,
                 11);
 
         Area area3 = new Area(
-                "Habitaciones",
+                "Habitaciones-planta3",
                 5679,
-                2,
+                3,
                 hospital2,
-                10);
+                12);
 
         ///////////////////////////////Personas///////////////////////////////
 
@@ -97,7 +96,7 @@ public class Main {
         ///////////////////////////////Contratos///////////////////////////////
 
         Contrato contrato1 = new Contrato(
-                LocalDate.of(2022, 2, 21),
+                LocalDate.of(2023, 2, 21),
                 "Contratación para el area1",
                 hospital1);
 
@@ -106,58 +105,103 @@ public class Main {
                 "Contratación para el area2",
                 hospital2);
 
-
-        String[] dni_medicos = {"20178994G", "73888024T"};
-        String[] dni_personas = {"35985664T"};
-
+        ///////////////////////////////Lista de contratos///////////////////////////////
         ArrayList<Contrato> list_Contratos = new ArrayList<Contrato>();
         list_Contratos.add(contrato1);
         list_Contratos.add(contrato2);
 
+        ///////////////////////////////Lista de médicos///////////////////////////////
         ArrayList<Medico> list_Medicos = new ArrayList<Medico>();
         list_Medicos.add(medico1);
         list_Medicos.add(medico2);
 
+        ///////////////////////////////Lista de personas///////////////////////////////
         ArrayList<Persona> list_Personas = new ArrayList<Persona>();
         list_Personas.add(persona1);
 
-        ArrayList<Direccion> list_Direcciones = new ArrayList<Direccion>();
-        list_Direcciones.add(direccionHospital1);
-        list_Direcciones.add(direccionHospital2);
+        ///////////////////////////////Lista de direcciones para personas/médicos///////////////////////////////
+        ArrayList<Direccion> list_Direcciones_Personas = new ArrayList<Direccion>();
+        list_Direcciones_Personas.add(direccionMedic);
 
+        ///////////////////////////////Lista de direcciones para hospitales///////////////////////////////
+        ArrayList<Direccion> list_Direcciones_Hospitales = new ArrayList<Direccion>();
+        list_Direcciones_Hospitales.add(direccionHospital1);
+        list_Direcciones_Hospitales.add(direccionHospital2);
+
+        ///////////////////////////////Lista de hospitales///////////////////////////////
         ArrayList<Hospital> list_Hospitales = new ArrayList<Hospital>();
         list_Hospitales.add(hospital1);
         list_Hospitales.add(hospital2);
 
-        System.out.println(area1.compareTo(area2));
+        ///////////////////////////////Lista de áreas///////////////////////////////
+        ArrayList<Area> list_Area = new ArrayList<Area>();
+        list_Area.add(area1);
+        list_Area.add(area2);
+        list_Area.add(area3);
 
         Scanner selection = new Scanner(System.in);
         int num = 0;
 
         while (num != 3) {
-            System.out.println("Elige una opción:\n\t1.Consultar datos de personas a traves del DNI.\n\t2.Registro.\n\t3.Salir.");
+            System.out.println("Elige una opción:\n\t1.Consultar datos de personas a traves del DNI.\n\t2.Registro de.\n\t3.Comparación de numeros de médicos de 2 areas\n\t4.Contratos de 2023\n\t5.Salir.");
             int scanner = selection.nextInt();
 
+            if(scanner<1 || scanner>5){
+                while(scanner<1 || scanner>5){
+                    System.out.print("Introduce un número del 1 al 5: ");
+                    scanner = selection.nextInt();
+                }
+            }
             if (scanner == 1) {
 
                 System.out.print("\nIntroduce el dni de alguién:");
                 Scanner inicio = new Scanner(System.in);
                 String inicio_2 = inicio.next();
 
-                medico1.Information_Medicos(inicio_2, list_Medicos, dni_medicos, dni_personas, list_Personas);
+                medico1.Information_Medicos(inicio_2, list_Medicos, list_Personas);
             }
             if (scanner == 2) {
-                scanner = selection.nextInt();
-                if (scanner == 1) {
-                    hospital1.creation_Hospital(list_Direcciones, list_Hospitales);
-                } else {
-                    if (scanner == 2) {
-                        area1.creation_Area(list_Hospitales);
+                System.out.println("\t1.Hospital\n\t2.Area\n\t3.Médico\n\t4.Contrato\n\t5.Dirección\n\t6.Persona");
+                int scanner2 = selection.nextInt();
+
+                if (scanner2 < 1 || scanner2 > 6) {
+                    while (scanner2 < 1 || scanner2 > 6) {
+                        System.out.print("Introduce un número del 1 al 6: ");
+                        scanner2 = selection.nextInt();
                     }
                 }
-                if (scanner == 3) {
-                    break;
+
+                if (scanner2 == 1) {
+                    hospital1.creation_Hospital(list_Direcciones_Hospitales, list_Hospitales);
+                } else {
+                    if (scanner2 == 2) {
+                        area1.creation_Area(list_Hospitales, list_Area);
+                    }else{
+                        if(scanner2 == 3){
+                            medico1.creation_Medicos(list_Area, list_Direcciones_Personas, list_Medicos);
+                        }else{
+                            if(scanner2 == 4){
+                                contrato1.creation_Contrato(list_Hospitales,list_Contratos);
+                            }else{
+                                if(scanner2 == 5) {
+                                    direccionMedic.creation_Direcciones(list_Direcciones_Personas, list_Direcciones_Hospitales);
+                                }else{
+                                    persona1.creation_persona(list_Personas);
+                                }
+                            }
+                        }
+                    }
                 }
+
+            }
+            if (scanner == 3){
+                area1.comparation_Area(list_Area);
+            }
+            if (scanner == 4){
+                contrato1.contratos_2023(list_Contratos);
+            }
+            if (scanner == 5) {
+                break;
             }
         }
     }
