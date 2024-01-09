@@ -37,9 +37,8 @@ public class Contrato {
                 "\n";
     }
 
-    Scanner new_Contratos = new Scanner(System.in);
-
-    public void creation_Contrato(ArrayList<Hospital> list_Hospitales,ArrayList<Contrato> list_Contratos, ArrayList<Medico> list_Medicos){
+    public static void creation_Contrato(ArrayList<Hospital> list_Hospitales,ArrayList<Contrato> list_Contratos, ArrayList<Medico> list_Medicos){
+        Scanner new_Contratos = new Scanner(System.in);
         System.out.print("Indica la fecha de creación del contrato\nNota:El formato de la fecha debe ser 4 dígitos(año)-2 dígitos(mes)-2 dígitos(día): ");
         LocalDate fecha_creacion = LocalDate.parse(new_Contratos.next());
         System.out.print("Introduce datos relevantes: ");

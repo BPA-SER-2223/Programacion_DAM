@@ -182,10 +182,10 @@ public class Inicio {
                             Medico.creation_Medicos(list_Area, list_Direcciones_Personas, list_Medicos);
                         }else{
                             if(scanner2 == 4){
-                                contrato1.creation_Contrato(list_Hospitales,list_Contratos,list_Medicos);
+                                Contrato.creation_Contrato(list_Hospitales,list_Contratos,list_Medicos);
                             }else{
                                 if(scanner2 == 5) {
-                                    direccionMedic.creation_Direcciones(list_Direcciones_Personas, list_Direcciones_Hospitales);
+                                    Direccion.creation_Direcciones(list_Direcciones_Personas, list_Direcciones_Hospitales);
                                 }else{
                                     Persona.creation_persona(list_Personas);
                                 }

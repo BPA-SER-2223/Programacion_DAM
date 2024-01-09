@@ -34,10 +34,8 @@ public class Direccion {
                 "\t\tlocalidad: " + localidad + '\n' +
                 "\t\tprovincia: " + provincia;
     }
-
-    Scanner new_direcion = new Scanner(System.in);
-
-    public void creation_Direcciones(ArrayList<Direccion> list_Direcciones_Personas,ArrayList<Direccion> list_Direcciones_Hospitales){
+    public static void creation_Direcciones(ArrayList<Direccion> list_Direcciones_Personas,ArrayList<Direccion> list_Direcciones_Hospitales){
+        Scanner new_direcion = new Scanner(System.in);
         System.out.print("Introduce la calle de la dirección:");
         String calle = new_direcion.next();
         System.out.print("Introduce el número de la dirección:");
