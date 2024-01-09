@@ -26,12 +26,11 @@ public class Hospital {
                 "\t\tcif: " + cif + "\n\n" +
                 "\t--direccion: " + direccion;
     }
-
-    Scanner new_Hospital = new Scanner(System.in);
-    public void creation_Hospital(ArrayList<Direccion> list_Direcciones_Hospitales, ArrayList<Hospital> list_Hospitales){
-        System.out.print("Escribe el nombre del hospital:");
+    public static void creation_Hospital(ArrayList<Direccion> list_Direcciones_Hospitales, ArrayList<Hospital> list_Hospitales){
+        Scanner new_Hospital = new Scanner(System.in);
+        System.out.print("Escribe el nombre del hospital: ");
         String nombre=new_Hospital.next();
-        System.out.print("Escribe el cif del hospital:");
+        System.out.print("Escribe el cif del hospital: ");
         String cif=new_Hospital.next();
 
         System.out.println("Elige una de estas direcciones para el hospital: ");

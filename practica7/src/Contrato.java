@@ -19,16 +19,6 @@ public class Contrato {
     public Hospital getHospitales(){return this.hospitales;}
     public void setHospitales(Hospital hospitales_c){this.hospitales = hospitales_c;}
 
-    int contratos=0;
-    public int getContratos_2023(ArrayList<Contrato> Contratos){
-        int contador=0;
-        for(int i=0;i<=Contratos.size();i++)
-            if(Contratos.get(i).fecha_creacion.getYear()==2023){
-                contador++;
-            }
-        return contador;
-    }
-
     @Override
     public String toString() {
         return  "fecha de creacion: " + fecha_creacion +
@@ -50,7 +40,7 @@ public class Contrato {
     Scanner new_Contratos = new Scanner(System.in);
 
     public void creation_Contrato(ArrayList<Hospital> list_Hospitales,ArrayList<Contrato> list_Contratos, ArrayList<Medico> list_Medicos){
-        System.out.print("Indica la fecha de creación del contrato\nNota:El formato de la fecha debe ser 4 dígitos(año)-2 dígitos(mes)-2 dígitos(día):");
+        System.out.print("Indica la fecha de creación del contrato\nNota:El formato de la fecha debe ser 4 dígitos(año)-2 dígitos(mes)-2 dígitos(día): ");
         LocalDate fecha_creacion = LocalDate.parse(new_Contratos.next());
         System.out.print("Introduce datos relevantes: ");
         String datos = new_Contratos.next();
@@ -60,7 +50,7 @@ public class Contrato {
         }
         int hospital = new_Contratos.nextInt();
 
-        System.out.println("Indica el médico relacionado a este contrato:");
+        System.out.println("Indica el médico relacionado a este contrato: ");
         for (int i=0;i<list_Medicos.size();i++){
             System.out.println("\t"+(i+1)+"-"+list_Medicos.get(i).getNombre());
         }
@@ -72,7 +62,7 @@ public class Contrato {
         System.out.println("¡Contrato creado!\n");
     }
 
-    public void contratos_2023(ArrayList<Contrato> list_Contratos){
+    public static void contratos_2023(ArrayList<Contrato> list_Contratos){
         for (Contrato listContrato : list_Contratos) {
             if (listContrato.fecha_creacion.getYear() == 2023) {
                 System.out.println(listContrato);

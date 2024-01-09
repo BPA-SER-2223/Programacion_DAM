@@ -54,10 +54,8 @@ public class Persona implements Humano {
                 "\tedad: " + edad + '\n' +
                 "\tsexo: " + sexo + '\n';
     }
-
-    Scanner new_Personas = new Scanner(System.in);
-
-    public void creation_persona(ArrayList<Persona> list_Personas){
+    public static void creation_persona(ArrayList<Persona> list_Personas){
+        Scanner new_Personas = new Scanner(System.in);
         System.out.print("Introduce el dni de la persona: ");
         String dni = new_Personas.next();
         System.out.print("Introduce el nombre de la persona: ");

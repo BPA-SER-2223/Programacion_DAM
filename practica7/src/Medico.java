@@ -111,23 +111,21 @@ public class Medico extends Persona {
             Information_Personas(inicio_2, list_Personas);
         }
     }
-
-    Scanner new_Medicos = new Scanner(System.in);
-
-    public void creation_Medicos(ArrayList<Area> list_Area, ArrayList<Direccion> list_Direcciones_Personas, ArrayList<Medico> list_Medicos){
-        System.out.print("Introduce el dni del médico:");
+    public static void creation_Medicos(ArrayList<Area> list_Area, ArrayList<Direccion> list_Direcciones_Personas, ArrayList<Medico> list_Medicos){
+        Scanner new_Medicos = new Scanner(System.in);
+        System.out.print("Introduce el dni del médico: ");
         String dni = new_Medicos.next();
-        System.out.print("Introduce el nombre del médico:");
+        System.out.print("Introduce el nombre del médico: ");
         String nombre = new_Medicos.next();
-        System.out.print("Introduce la edad del médico");
+        System.out.print("Introduce la edad del médico: ");
         int edad = new_Medicos.nextInt();
-        System.out.print("Introduce el género del médico:");
+        System.out.print("Introduce el género del médico: ");
         String sexo = new_Medicos.next();
-        System.out.print("Introduce el sueldo del médico(Nota: el formato del sueldo debe ser indicado con decimales, formato: 0,0):");
+        System.out.print("Introduce el sueldo del médico(Nota: el formato del sueldo debe ser indicado con decimales, formato: 0,0): ");
         double sueldo = new_Medicos.nextDouble();
-        System.out.print("Introduce la fecha de incorporación del médico\nNota:El formato de la fecha debe ser 4 dígitos(año)-2 dígitos(mes)-2 dígitos(día):");
+        System.out.print("Introduce la fecha de incorporación del médico\nNota:El formato de la fecha debe ser 4 dígitos(año)-2 dígitos(mes)-2 dígitos(día): ");
         LocalDate fecha_entrada = LocalDate.parse(new_Medicos.next());
-        System.out.println("Elige el area al que está asignado el médico:");
+        System.out.println("Elige el area al que está asignado el médico: ");
         for(int i=0;i<list_Area.size();i++){
             System.out.println("\t"+(i+1)+"-"+list_Area.get(i).getNombre());
         }

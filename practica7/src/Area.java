@@ -52,9 +52,8 @@ public class Area {
         return this.num_medicos;
     }
 
-    Scanner selec_Area = new Scanner(System.in);
-
-    public void comparation_Area(ArrayList<Area> list_Area) {
+    public static void comparation_Area(ArrayList<Area> list_Area) {
+        Scanner selec_Area = new Scanner(System.in);
         System.out.println("Elige dos areas");
         for(int i=0;i<list_Area.size();i++){
             System.out.println("\t"+(i+1)+"-"+list_Area.get(i).getNombre());
@@ -103,21 +102,21 @@ public class Area {
                 hospital + '\n';
     }
 
-    Scanner new_Area = new Scanner(System.in);
 
-    public void creation_Area(ArrayList<Hospital> list_Hospitales, ArrayList<Area> list_Area) {
-        System.out.print("Introduce el nombre del area:");
+    public static void creation_Area(ArrayList<Hospital> list_Hospitales, ArrayList<Area> list_Area) {
+        Scanner new_Area = new Scanner(System.in);
+        System.out.print("Introduce el nombre del area: ");
         String nombre = new_Area.next();
-        System.out.print("Introduce el identificador del area:");
+        System.out.print("Introduce el identificador del area: ");
         int identificador = new_Area.nextInt();
-        System.out.print("Introduce la planta a la que pertenece el area:");
+        System.out.print("Introduce la planta a la que pertenece el area: ");
         int planta = new_Area.nextInt();
         System.out.print("Elige el hospital asociado al area: 'Nota: si el hospital no aparece, recuerda que tienes que crearlo primero.'\n");
         for (int i = 0; i < list_Hospitales.size(); i++) {
             System.out.println("\t" + (i + 1) + "-" + list_Hospitales.get(i).getNombre());
         }
         int j = new_Area.nextInt();
-        System.out.print("Introduce el número de médicos asociado a este area:");
+        System.out.print("Introduce el número de médicos asociado a este area: ");
         int num_medicos = new_Area.nextInt();
 
         Area area3 = new Area(nombre, identificador, planta, list_Hospitales.get(j-1), num_medicos);
