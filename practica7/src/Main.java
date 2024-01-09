@@ -97,12 +97,12 @@ public class Main {
 
         Contrato contrato1 = new Contrato(
                 LocalDate.of(2023, 2, 21),
-                "Contratación para el area1",
+                medico1,
                 hospital1);
 
         Contrato contrato2 = new Contrato(
                 LocalDate.of(2023, 5, 1),
-                "Contratación para el area2",
+                medico2,
                 hospital2);
 
         ///////////////////////////////Lista de contratos///////////////////////////////
@@ -141,6 +141,8 @@ public class Main {
 
         Scanner selection = new Scanner(System.in);
         int num = 0;
+
+        System.out.println(list_Contratos);
 
         while (num != 3) {
             System.out.println("Elige una opción:\n\t1.Consultar datos de personas a traves del DNI.\n\t2.Registro de.\n\t3.Comparación de numeros de médicos de 2 areas\n\t4.Contratos de 2023\n\t5.Salir.");
@@ -181,7 +183,7 @@ public class Main {
                             medico1.creation_Medicos(list_Area, list_Direcciones_Personas, list_Medicos);
                         }else{
                             if(scanner2 == 4){
-                                contrato1.creation_Contrato(list_Hospitales,list_Contratos);
+                                contrato1.creation_Contrato(list_Hospitales,list_Contratos,list_Medicos);
                             }else{
                                 if(scanner2 == 5) {
                                     direccionMedic.creation_Direcciones(list_Direcciones_Personas, list_Direcciones_Hospitales);
