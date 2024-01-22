@@ -1,4 +1,6 @@
 import People
+
+
 class Student:
     def __int__(self, dni, name, age, sex, course: str, subjects: str, email: str):
         super().__init__(dni, name, age, sex)

@@ -29,4 +29,3 @@ class People():
     def set_sex(self, sex):
         self.__sex = sex
 
-

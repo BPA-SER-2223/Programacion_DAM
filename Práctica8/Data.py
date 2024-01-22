@@ -1,3 +1,5 @@
 import Teacher
+import Departament
+import People
 
-Ana = Teacher("30245678P", "Ana", 38, "Femenino", 2000.0, 2000-12-12, )
+ana = People("3027344Y","weewe",12,"sddsd")
