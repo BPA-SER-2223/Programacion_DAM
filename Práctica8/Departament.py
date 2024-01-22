@@ -9,7 +9,7 @@ class Departament:
     def set_identifier(self, identifier):
         self.__identidier = identifier
 
-    def get_name(self):
+    def get_name(self) -> str:
         return self.__name
 
     def set_name(self, name):
