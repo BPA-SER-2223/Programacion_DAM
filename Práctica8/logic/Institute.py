@@ -1,4 +1,5 @@
-from logic import Address, Course
+from logic.Address import Address
+from logic.Course import Course
 class Institute:
     def __init__(self, name: str, cif: str, address: Address, courses:  Course):
         self.__name = name

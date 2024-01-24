@@ -1,7 +1,7 @@
 import datetime
-from People import People
-from Department import Department
-from Subject import Subject
+from logic.People import People
+from logic.Department import Department
+from logic.Subject import Subject
 class Teacher(People):
     def __init__(self, dni, name, age, sex, salary: float, start_date: datetime, subjects: Subject, departament: Department):
         super().__init__(dni, name, age, sex)

@@ -1,7 +1,7 @@
-import Student
-import Subject
-import Course
-class Enrollment:
+from logic.Student import Student
+from logic.Subject import Subject
+from logic.Course import Course
+class Enrollment():
     def __init__(self, student: Student, subject: Subject, course: Course):
         self.__student = student
         self.__subject = subject
