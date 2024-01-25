@@ -20,25 +20,6 @@ people1 = People("20343433C",
 
 list_People = [people1]
 
-#-------------------Administration Staff-------------------
-adm1 = Adm_Staff("Sandra",
-                 "30278765L",
-                 40,
-                 "Femenino",
-                 "Gestionar el calendario administrativo",
-                 1500.45,
-                 datetime(2000, 2, 3))
-
-adm2 = Adm_Staff("Raúl",
-                 "29750403K",
-                 25,
-                 "Masculino",
-                 "Realizar gestiones asociadas a la compra y a la venta",
-                 1500.0,
-                 datetime(1997, 4, 22))
-
-list_adm = [adm1, adm2]
-
 #-------------------Courses-------------------
 course1 = Course("Primaria",
                  "Primero",
@@ -145,36 +126,6 @@ subject5 = Subject("Estadstica",
 
 list_subject = [subject1, subject2, subject3, subject4, subject5]
 
-#-------------------Teachers-------------------
-teacher1 = Teacher("28960214T",
-                   "Pedro",
-                   29,
-                   "Masculino",
-                   2000.0,
-                   datetime(2020, 12, 12),
-                   subject1,
-                   department1)
-
-teacher2 = Teacher("30909027H",
-                   "Maria",
-                   28,
-                   "Femenino",
-                   1800.0,
-                   datetime(2015, 11, 9),
-                   subject5,
-                   department1)
-
-teacher3 = Teacher("28664302",
-                   "Sergio",
-                   46,
-                   "Masculino",
-                   1900.8,
-                   datetime(2000, 5, 18),
-                   subject2,
-                   department3)
-
-list_teacher = [teacher1, teacher2, teacher3]
-
 #-------------------Address-------------------"""
 
 address1_student = Address("La soledad",
@@ -238,6 +189,26 @@ address3_teacher = Address("Perro Rojo",
 
 list_address_teacher = [address1_teacher, address2_teacher, address3_teacher]
 
+address1_adm = Address("Vidal Montañez",
+                           90,
+                           41202,
+                           "Sevilla",
+                           "Sevilla")
+
+address2_adm = Address("Persan",
+                           74,
+                           41002,
+                           "Sevilla",
+                           "Sevilla")
+
+address3_adm = Address("Funte del Valle",
+                           27,
+                           41066,
+                           "Sevilla",
+                           "Sevilla")
+
+list_address_adm = [address1_adm, address2_adm, address3_adm]
+
 #-------------------Institutes-------------------
 
 institute1 = Institute("I.E.S. San Marcos",
@@ -284,6 +255,25 @@ student3 = Student("28475942D",
                    "luismartin@gmail.com")
 
 list_student = [student1, student2, student3]
+
+#-------------------Administration Staff-------------------
+adm1 = Adm_Staff("Sandra",
+                 "30278765L",
+                 40,
+                 "Femenino",
+                 "Gestionar el calendario administrativo",
+                 1500.45,
+                 datetime(2000, 2, 3))
+
+adm2 = Adm_Staff("Raúl",
+                 "29750403K",
+                 25,
+                 "Masculino",
+                 "Realizar gestiones asociadas a la compra y a la venta",
+                 1500.0,
+                 datetime(1997, 4, 22))
+
+list_adm = [adm1, adm2]
 
 #-------------------Grades-------------------
 
@@ -334,3 +324,61 @@ enrollment3 = Enrollment(student3,
 
 list_enrollment = [enrollment1, enrollment2, enrollment3]
 
+#-------------------Teachers-------------------
+teacher1 = Teacher("28960214T",
+                   "Pedro",
+                   29,
+                   "Masculino",
+                   2000.0,
+                   datetime(2020, 12, 12),
+                   subject1,
+                   department1)
+
+teacher2 = Teacher("30909027H",
+                   "Maria",
+                   28,
+                   "Femenino",
+                   1800.0,
+                   datetime(2015, 11, 9),
+                   subject5,
+                   department1)
+
+teacher3 = Teacher("28664302",
+                   "Sergio",
+                   46,
+                   "Masculino",
+                   1900.8,
+                   datetime(2000, 5, 18),
+                   subject2,
+                   department3)
+
+list_teacher = [teacher1, teacher2, teacher3]
+
+def Address_registration():
+
+    street = str(input("Introduce la calle de la dirección: ")),
+    number = int(input("Introduce el número de la calle: ")),
+    postal_code = int(input("Introduce el código portal de la dirección: ")),
+    location = str(input("Introduce la localidad de la dirección: ")),
+    province = str(input("Introduce la provincia de la dirección: "))
+
+    new_addess = Address(street, number, postal_code, location, province)
+
+    selection = int(input("\n¿Que tipo de dirección es?\n\n\t1. Dirección de profesor\n\t2. Dirección de Instituto\n\t3. Dirección de estudiante\n\t4. Dirección del Personal de Administración\n"))
+
+
+    if selection == 1:
+        list_address_teacher.append(new_addess)
+        print("¡Dirección creada!")
+
+    if selection == 2:
+        list_address_institute.append(new_addess)
+        print("¡Dirección creada!")
+
+    if selection == 3:
+        list_address_student.append(new_addess)
+        print("¡Dirección creada!")
+
+    if selection == 4:
+        list_address_adm.append(new_addess)
+        print("¡Dirección creada!")
