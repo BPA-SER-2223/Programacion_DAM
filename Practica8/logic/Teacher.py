@@ -1,4 +1,4 @@
-import datetime
+from datetime import datetime
 from logic.People import People
 from logic.Department import Department
 from logic.Subject import Subject
@@ -58,3 +58,5 @@ class Teacher(People):
 
         return str(Net_Income)+"€"
 
+    def get_antiquity(self):
+        print(datetime.now().year - self.__start_date.year)
