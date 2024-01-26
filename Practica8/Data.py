@@ -366,19 +366,35 @@ def Address_registration():
 
     selection = int(input("\n¿Que tipo de dirección es?\n\n\t1. Dirección de profesor\n\t2. Dirección de Instituto\n\t3. Dirección de estudiante\n\t4. Dirección del Personal de Administración\n"))
 
-
     if selection == 1:
         list_address_teacher.append(new_addess)
-        print("¡Dirección creada!")
+        print("¡Dirección creada!\n")
 
     if selection == 2:
         list_address_institute.append(new_addess)
-        print("¡Dirección creada!")
+        print("¡Dirección creada!\n")
 
     if selection == 3:
         list_address_student.append(new_addess)
-        print("¡Dirección creada!")
+        print("¡Dirección creada!\n")
 
     if selection == 4:
         list_address_adm.append(new_addess)
-        print("¡Dirección creada!")
+        print("¡Dirección creada!\n")
+
+def Adm_Staff_registration():
+
+    name=str(input("Introduce el nombre de la nueva incorporación de Administración: "))
+    dni=str(input("Introduce el nombre de la nueva incorporación de Administración: "))
+    age=int(input("Introduce el nombre de la nueva incorporación de Administración: "))
+    sex=str(input("Introduce el nombre de la nueva incorporación de Administración: "))
+    functions=str(input("Introduce el nombre de la nueva incorporación de Administración: "))
+    salary=float(input("Introduce el nombre de la nueva incorporación de Administración: "))
+    start_date=datetime(input("Introduce el nombre de la nueva incorporación de Administración\n(IMPORTANTE: tienes que seguir el siguiente formato->año/mes/día.)\n "))
+
+
+    new_adm_staff = Adm_Staff(name, dni, age, sex, functions, salary, start_date)
+
+    list_adm.append(new_adm_staff)
+
+def Course_registration():
