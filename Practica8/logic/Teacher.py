@@ -2,13 +2,15 @@ from datetime import datetime
 from logic.People import People
 from logic.Department import Department
 from logic.Subject import Subject
+from logic.Address import Address
 class Teacher(People):
-    def __init__(self, dni, name, age, sex, salary: float, start_date: datetime, subjects: Subject, departament: Department):
+    def __init__(self, dni, name, age, sex, salary: float, start_date: datetime.date, subjects: Subject, departament: Department, address: Address):
         super().__init__(dni, name, age, sex)
         self.__salary = salary
         self.__start_date = start_date
         self.__subjects = subjects
         self.__departament = departament
+        self.__address = address
 
     def get_salary(self) -> float:
         return self.__salary
@@ -16,7 +18,7 @@ class Teacher(People):
     def set_salary(self, salary):
         self.__salary = salary
 
-    def get_start_date(self) -> datetime:
+    def get_start_date(self) -> datetime.date:
         return self.__start_date
 
     def set_start_date(self, start_date):
@@ -33,6 +35,12 @@ class Teacher(People):
 
     def set_departament(self, departament):
         self.__departament = departament
+
+    def get_address(self) -> Address:
+        return self.__address
+
+    def set_address(self, address):
+        self.__address = address
 
     def get_Net_Income(self) -> str:
         Annual_Salary = self.__salary * 12
@@ -59,4 +67,4 @@ class Teacher(People):
         return str(Net_Income)+"€"
 
     def get_antiquity(self):
-        print(datetime.now().year - self.__start_date.year)
+        return datetime.now().year - self.__start_date.year
