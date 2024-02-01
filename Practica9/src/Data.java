@@ -1,10 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
-
 public class Data {
-
-
-
 
     public static void ejercicio1(){
         int infinite = 0;
@@ -20,34 +16,72 @@ public class Data {
             Scanner a = new Scanner(System.in);
             System.out.println("Elige una opción.\n\t1. Añadir número.\n\t2. Sumar todos los números.\n\t3. Mostrar todos los números\n\t4. Salir");
 
-            int selection2 = a.nextInt();
+            int selection = a.nextInt();
 
-            if(selection2<1 || selection2>4){
-                while (selection2<1 || selection2>4){
+            if(selection<1 || selection>4){
+                while (selection<1 || selection>4){
                     System.out.print("Introduce un número entre 1 y 4: ");
-                    selection2 = a.nextInt();
+                    selection = a.nextInt();
                 }
             }
 
-            if(selection2 == 1){
+            if(selection == 1){
                 list1.add_num();
             }
-            if(selection2 == 2){
+            if(selection == 2){
                 System.out.println("La sume es: "+list1.sumar_nums());
             }
-            if(selection2 == 3){
+            if(selection == 3){
                 System.out.println(list1.get_list_num());
             }
-            if (selection2 == 4){
+            if (selection == 4){
                 break;
             }
         }
     }
 
     public static void ejerccio2(){
-        ArrayList<GestorPersonas> list_People = new ArrayList<GestorPersonas>();
+        int infinite = 0;
 
-        GestorPersonas people1 = new GestorPersonas("Pedro", 22);
+        GestorPersonas gestor = new GestorPersonas();
+
+        while (infinite == 0){
+            System.out.println("Elige una opción\n\t1. Añadir persona\n\t2. Información de personas\n\t3. Buscar persona\n\t4. Salir");
+            Scanner a = new Scanner(System.in);
+            int selection = a.nextInt();
+
+
+            if(selection<1 || selection>4){
+                while (selection<1 || selection>4){
+                    System.out.print("Introduce un número entre 1 y 4: ");
+                    selection = a.nextInt();
+                }
+            }
+
+            if(selection == 1){
+                System.out.print("Introduce el nombre de la persona: ");
+                String name = a.next();
+                System.out.print("Introduce la edad de la persona: ");
+                int age = a.nextInt();
+                gestor.createPersona(name, age);
+                System.out.println("\n¡Persona creada!\n");
+            }
+            if(selection == 2){
+                GestorPersonas.showPersona("nombre de la persona");
+
+                // mostrar todas las personas
+                System.out.println(gestor.getMap().entrySet());
+            }
+            if(selection == 3){
+
+            }
+            if (selection == 4){
+                break;
+            }
+
+        }
+
+
 
     }
 }

@@ -1,17 +1,30 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Scanner;
+
 public class GestorPersonas {
-    private String name;
-    private Integer age;
+    private HashMap<String, Integer> map;
 
-    public GestorPersonas(String name, Integer age){
-        this.name = name;
-        this.age = age;
+    public GestorPersonas(){
+        this.map = new HashMap<>();
     }
-    public String get_name(){return this.name;}
-    public void set_name(String name){this.name = name;}
-    public Integer get_age(){return this.age;}
-    public void set_age(Integer age){this.age = age;}
 
-    public static void create_People(){
+    public HashMap<String, Integer> getMap() {
+        return this.map;
+    }
+    public void createPersona(String name, Integer age){
+        this.map.put(name, age);
+    }
+    public static void showPersona() {
 
+//        Integer age = this.map.get(name);
+//
+//        this.map.entrySet()
+//        Sys
+    }
+    public Boolean searchPersona(String name){
+        Scanner a = new Scanner(System.in);
+        name = a.next();
+        return this.map.containsKey(name);
     }
 }

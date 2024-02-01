@@ -9,7 +9,7 @@ public class Presentation {
             Data.ejercicio1();
         }
         if(selection == 2){
-
+            Data.ejerccio2();
         }
         if(selection == 3){
 
