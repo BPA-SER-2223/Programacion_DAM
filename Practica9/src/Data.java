@@ -67,21 +67,14 @@ public class Data {
                 System.out.println("\n¡Persona creada!\n");
             }
             if(selection == 2){
-                GestorPersonas.showPersona("nombre de la persona");
-
-                // mostrar todas las personas
-                System.out.println(gestor.getMap().entrySet());
+                gestor.showPersona(gestor);
             }
             if(selection == 3){
-
+                System.out.println(gestor.searchPersona()+"\n");
             }
             if (selection == 4){
                 break;
             }
-
         }
-
-
-
     }
 }

@@ -15,14 +15,12 @@ public class GestorPersonas {
     public void createPersona(String name, Integer age){
         this.map.put(name, age);
     }
-    public static void showPersona() {
-
-//        Integer age = this.map.get(name);
-//
-//        this.map.entrySet()
-//        Sys
+    public static void showPersona(GestorPersonas gestor) {
+        System.out.println(gestor.getMap().entrySet()+"\n");
     }
-    public Boolean searchPersona(String name){
+    public Boolean searchPersona(){
+        String name;
+        System.out.println("¿Que persona quieres buscar?");
         Scanner a = new Scanner(System.in);
         name = a.next();
         return this.map.containsKey(name);
