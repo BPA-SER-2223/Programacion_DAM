@@ -40,7 +40,7 @@ public class Data {
         }
     }
 
-    public static void ejerccio2(){
+    public static void ejercicio2(){
         int infinite = 0;
 
         GestorPersonas gestor = new GestorPersonas();
@@ -71,6 +71,118 @@ public class Data {
             }
             if(selection == 3){
                 System.out.println(gestor.searchPersona()+"\n");
+            }
+            if (selection == 4){
+                break;
+            }
+        }
+    }
+    public static void ejercicio3(){
+        int infinite = 0;
+
+        GestorColores colors = new GestorColores();
+
+        while (infinite == 0){
+            System.out.println("Elige una opción\n\t1. Añadir color\n\t2. Ver todos los colores\n\t3. Buscar color\n\t4. Salir");
+            Scanner a = new Scanner(System.in);
+            int selection = a.nextInt();
+
+
+            if(selection<1 || selection>4){
+                while (selection<1 || selection>4){
+                    System.out.print("Introduce un número entre 1 y 4: ");
+                    selection = a.nextInt();
+                }
+            }
+
+            if(selection == 1){
+                System.out.print("Introduce un color: ");
+                String color = a.next();
+                colors.createColor(color);
+                System.out.println("\n¡Color creado!\n");
+            }
+            if(selection == 2){
+                GestorColores.showColors(colors);
+            }
+            if(selection == 3){
+                System.out.println(colors.searchColors()+"\n");
+            }
+            if (selection == 4){
+                break;
+            }
+        }
+    }
+    public static void ejercicio4(){
+        int infinite = 0;
+
+        GestorEstudiantes students = new GestorEstudiantes();
+
+        while (infinite == 0){
+            System.out.println("Elige una opción\n\t1. Añadir estudiante\n\t2. Ver todos los estudiantes\n\t3. Buscar estudiante\n\t4. Salir");
+            Scanner a = new Scanner(System.in);
+            int selection = a.nextInt();
+
+
+            if(selection<1 || selection>4){
+                while (selection<1 || selection>4){
+                    System.out.print("Introduce un número entre 1 y 4: ");
+                    selection = a.nextInt();
+                }
+            }
+
+            if(selection == 1){
+                System.out.print("Introduce el nombre del estudiante: ");
+                String name = a.next();
+                System.out.print("Introduce el identificador del estudiante: ");
+                int identifier = a.nextInt();
+
+                Estudiante new_student = new Estudiante(name, identifier);
+                students.createStudent(new_student);
+                System.out.println("\n¡Estudiante creado!\n");
+            }
+            if(selection == 2){
+                GestorEstudiantes.showStudent(students);
+            }
+            if(selection == 3){
+                System.out.println();
+            }
+            if (selection == 4){
+                break;
+            }
+        }
+    }
+    public static void ejercicio5(){
+        int infinite = 0;
+
+        GestorEmpleados employees = new GestorEmpleados();
+
+        while(infinite != 1){
+            Scanner a = new Scanner(System.in);
+            System.out.println("Elige una opción.\n\t1. Añadir empleado.\n\t2. Ver todos los empleados.\n\t3. Buscar empleado\n\t4. Salir");
+
+            int selection = a.nextInt();
+
+            if(selection<1 || selection>4){
+                while (selection<1 || selection>4){
+                    System.out.print("Introduce un número entre 1 y 4: ");
+                    selection = a.nextInt();
+                }
+            }
+
+            if(selection == 1){
+                System.out.print("Escribe el nombre del empleado: ");
+                String name = a.next();
+                System.out.print("Escribe el salario del empleado con decimas: ");
+                double salary = a.nextDouble();
+                Empleados new_employee = new Empleados(name, salary);
+                employees.createEmployees(name, new_employee);
+                System.out.println("\n¡Empleado creado!\n");
+            }
+            if(selection == 2){
+                GestorEmpleados.showEmployees(employees);
+            }
+            if(selection == 3){
+                System.out.println(employees.searchEmployees()+"\n");
             }
             if (selection == 4){
                 break;

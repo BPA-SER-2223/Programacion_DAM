@@ -9,16 +9,16 @@ public class Presentation {
             Data.ejercicio1();
         }
         if(selection == 2){
-            Data.ejerccio2();
+            Data.ejercicio2();
         }
         if(selection == 3){
-
+            Data.ejercicio3();
         }
         if(selection == 4){
-
+            Data.ejercicio4();
         }
         if(selection == 5){
-
+            Data.ejercicio5();
         }
     }
 }
