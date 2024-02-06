@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class GestorEstudiantes {
     private HashSet<Estudiante> set;
+<<<<<<< Updated upstream
 
     public GestorEstudiantes() {
         this.set = new HashSet<Estudiante>();
@@ -21,6 +22,21 @@ public class GestorEstudiantes {
     }
 
     public void searchColors(GestorEstudiantes students) {
+=======
+    public GestorEstudiantes(){
+        this.set = new HashSet<Estudiante>();
+    }
+    public HashSet<Estudiante> getSet() {
+        return this.set;
+    }
+    public void createStudent(Estudiante student){
+        this.set.add(student);
+    }
+    public static void showStudent(GestorEstudiantes students) {
+        System.out.println(students.getSet()+"\n");
+    }
+    public Boolean searchColors(GestorEstudiantes students){
+>>>>>>> Stashed changes
         String name;
         int identidier;
         int selection;
@@ -29,6 +45,7 @@ public class GestorEstudiantes {
         Scanner a = new Scanner(System.in);
         selection = a.nextInt();
 
+<<<<<<< Updated upstream
         if (selection == 1) {
             System.out.println("Introduce el nombre del estudiante.");
             name = a.next();
@@ -42,6 +59,16 @@ public class GestorEstudiantes {
             System.out.println("Introduce el identificador del estudiante.");
             identidier = a.nextInt();
             //return this.set.contains(identidier);
+=======
+        if(selection == 1){
+            System.out.println("Introduce el nombre del estudiante.");
+            name = a.next();
+            return this.set.contains(name);
+        }else{
+            System.out.println("Introduce el identificador del estudiante.");
+            identidier = a.nextInt();
+            return this.set.contains(identidier);
+>>>>>>> Stashed changes
         }
     }
 }

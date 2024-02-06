@@ -144,7 +144,11 @@ public class Data {
                 GestorEstudiantes.showStudent(students);
             }
             if(selection == 3){
+<<<<<<< Updated upstream
                 System.out.println();
+=======
+                System.out.println(students.searchColors(students));
+>>>>>>> Stashed changes
             }
             if (selection == 4){
                 break;
@@ -182,7 +186,11 @@ public class Data {
                 GestorEmpleados.showEmployees(employees);
             }
             if(selection == 3){
+<<<<<<< Updated upstream
                 System.out.println(employees.searchEmployees()+"\n");
+=======
+                employees.searchEmployees();
+>>>>>>> Stashed changes
             }
             if (selection == 4){
                 break;
