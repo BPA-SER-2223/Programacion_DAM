@@ -18,5 +18,5 @@ class OperadorConjunto:
     def deleter_conj(self, dele: int):
         self.__conj.remove(dele)
 
-    def union_conj(self, new_conj: set):
-        self.__conj.union(new_conj)
+    def union_conj(self, new_conj):
+        self.__conj.update(new_conj)

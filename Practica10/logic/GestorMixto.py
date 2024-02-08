@@ -1,12 +1,9 @@
 from logic.GestorListas import GestorListas
 from logic.GestorDiccionarios import GestorDiccionarios
 class GestorMixto(GestorListas, GestorDiccionarios):
-    def __int__(self, list, dicc: dict):
-        super.__init__(list)
-        self.__dicc = dicc
+    def __init__(self, list: list, dicc: dict):
+        GestorListas.__init__(self, list)
+        GestorDiccionarios.__init__(self, dicc)
 
-    def get_dicc(self):
-        return self.__dicc
-
-    def set_dicc(self, dicc):
-        self.__dicc = dicc
+    def get_list_key(self) -> list:
+        return self.get_list() + (list(self.get_dicc().keys()))

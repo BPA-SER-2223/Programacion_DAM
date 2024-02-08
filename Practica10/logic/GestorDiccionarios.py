@@ -9,7 +9,7 @@ class GestorDiccionarios:
         self.__dicc = dicc
 
     def add_to_dicc(self, word: str, mean: str):
-        self.__dicc.update({word:mean})
+        self.__dicc.update({word: mean})
 
     def change_key(self, old_key: str, new_key: str):
         self.__dicc[new_key] = self.__dicc.pop(old_key)
@@ -19,4 +19,3 @@ class GestorDiccionarios:
 
     def seach_something(self, key: str):
         print(self.__dicc.get(key))
-

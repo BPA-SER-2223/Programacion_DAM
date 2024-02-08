@@ -151,7 +151,7 @@ class Data:
                 print(ej4.get_conj())
 
             if selection == 5:
-                new_conj = {10,11,12}
+                new_conj = {10, 11, 12}
                 ej4.union_conj(new_conj)
 
             if selection == 6:
@@ -160,7 +160,7 @@ class Data:
     def ejercicio5(self):
 
         infinite = 0
-        ej5 = GestorMixto([1,2,3])
+        ej5 = GestorMixto([1, 2, 3], {"Sinonimos": "Palabras distintas que significan lo mismo."})
 
         while infinite == 0:
 
@@ -176,10 +176,12 @@ class Data:
                 ej5.add_to_the_list(num)
 
             if selection == 2:
-                print("No")
+                word = str(input("Introduce la palabra a añadir al diccionario: "))
+                mean = str(input("Introduce el signidicado de la palabra anterior: "))
+                ej5.add_to_dicc(word, mean)
 
             if selection == 3:
-                print("No")
+                print(ej5.get_list_key())
 
             if selection == 4:
                 break
