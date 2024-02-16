@@ -1,0 +1,2 @@
+30902348T;Raul;Martín;Masculino
+12345678H;Marta;Martín;Femenino
