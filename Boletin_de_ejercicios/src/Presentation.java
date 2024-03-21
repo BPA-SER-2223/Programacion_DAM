@@ -14,7 +14,7 @@ public class Presentation {
         //People.woman(peoples);
 
         List<Enero> eneros = new ArrayList<Enero>();
-        int[][] temperatures = new int[31][31];
+        List<Integer> temperatures = new ArrayList<>();
         List<String> weekDays = new ArrayList<String>();
         weekDays.add("Lunes");
         weekDays.add("Martes");
@@ -25,6 +25,9 @@ public class Presentation {
         weekDays.add("Domingo");
 
         Enero.writeTemperatures(eneros, temperatures);
+
+        eneros.get(0).seeTemperatures(temperatures);
+
 
 
     }
