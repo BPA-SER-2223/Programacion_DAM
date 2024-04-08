@@ -34,25 +34,21 @@ public class Enero {
         System.out.println("\n¡Temperaturas del més de Enero Nº"+ eneros.size() +" registrado!");
     }
 
-    public void seeTemperatures(List<Integer> temperatures){
+    public void seeTemperatures(List<Integer> temperatures, List<String> weekDays){
 
         int week = 1;
+        int in=0;
 
         for(int i=0;i<temperatures.size();i++){
-            System.out.print("El de la Semana "+week+" con "+temperatures.get(i)+" grados.");
+            System.out.print("El "+weekDays.get(in)+" de la Semana "+week+" con "+temperatures.get(i)+" grados.");
             System.out.println();
-
+            in++;
             if(i%7==6){
                 week++;
+                in=0;
             }
         }
 
     }
-
-
-
-    //public static void hotday(List<Integer> temperatures){
-        //for()
-    //}
 
 }

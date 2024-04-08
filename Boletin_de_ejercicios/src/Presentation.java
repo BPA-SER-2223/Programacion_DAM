@@ -26,7 +26,7 @@ public class Presentation {
 
         Enero.writeTemperatures(eneros, temperatures);
 
-        eneros.get(0).seeTemperatures(temperatures);
+        eneros.get(0).seeTemperatures(temperatures, weekDays);
 
 
 
