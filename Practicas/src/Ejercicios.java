@@ -131,7 +131,16 @@ public class Ejercicios {
                 System.out.println("Introduce un número positivo (Si es muy grande mejor).");
                 num = a.nextInt();
 
-                for(int i=0;i<)
+                for(int i=0;i<num;i++) {
+                    String nu = String.valueOf(Integer.toString(num).charAt(i));
+
+                    if(Integer.parseInt(nu)%2==0){
+                        System.out.println("Es par");
+                    }else{
+                        System.out.println("Es impar");
+                    }
+
+                }
         }
     }
 }
