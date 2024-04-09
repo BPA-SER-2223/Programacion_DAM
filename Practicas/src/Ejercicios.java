@@ -5,13 +5,14 @@ public class Ejercicios {
     public static void main(String[] args) {
 
         Scanner a = new Scanner(System.in);
-        int num;
+        int num = 0;
         int num1 = 0;
         int num2 = 0;
         int select = a.nextInt();
         int count = 0;
+        int accumulator = 0;
 
-        switch (select){
+        switch (select) {
             case 1:
                 count = 0;
                 do {
@@ -57,22 +58,80 @@ public class Ejercicios {
                 num = a.nextInt();
                 ArrayList<Integer> primos = new ArrayList<>();
 
-                for(int i = 0;i<num;i++){
+                for (int i = 0; i < num; i++) {
                     count = 0;
-                    if(num % (i+1) == 0) {
-                        for(int j=0;j<(i+1);j++){
-                            if((i+1) % (j+1) == 0){
+                    if (num % (i + 1) == 0) {
+                        for (int j = 0; j < (i + 1); j++) {
+                            if ((i + 1) % (j + 1) == 0) {
                                 count++;
                             }
                         }
-                        if(count == 2){
-                            primos.add((i+1));
+                        if (count == 2) {
+                            primos.add((i + 1));
                         }
                     }
                 }
                 System.out.println(primos);
+                break;
             case 4:
+                System.out.println("Introduce la cantidad y precio de los productos. Cuando quieras parar, introduce un 0.");
+                count = 1;
+                do {
+                    System.out.print("\n" + count + "º producto\n------------------\nCantidad:  ");
+                    num = a.nextInt();
+                    System.out.print("Precio de 1 unidad: ");
+                    if(num!=0){
+                        num1 = a.nextInt();
+                    }
+                    accumulator = (num*num1) + accumulator;
+                    count++;
+                } while (num != 0);
 
+                System.out.println("El precio total del pedido es de " + accumulator + "€");
+                break;
+
+            case 5:
+                System.out.println("Introduce un frase.");
+                Scanner b = new Scanner(System.in);
+                String boo = b.nextLine();
+                String[] sentence = boo.split("\\s+");
+
+                for (int i=0;i<sentence.length;i++) {
+                    System.out.print(sentence[(sentence.length-1)-i] + " ");
+                }
+                break;
+
+            case 6:
+                int more = 0;
+                int less = 0;
+                double accumulator2 = 0;
+                System.out.print("Introduce el número de personas: ");
+                num = a.nextInt();
+                ArrayList<Double> heights = new ArrayList<>();
+
+                for(int i=0;i<num;i++){
+                    System.out.print("Altura de la " + (i+1) + " persona: ");
+                    double height = a.nextDouble();
+                    heights.add(height);
+                    accumulator2 =  height + accumulator2;
+                }
+
+                for(int j=0;j<heights.size();j++){
+                    if(heights.get(j) < (accumulator2/heights.size())){
+                        less++;
+                    }else{
+                        more++;
+                    }
+                }
+
+                System.out.println("Número de personas: " + num + "\nMedia registrada: " + (accumulator2/num) + "\nPersonas con la altura por encima del promedio: " + more + "\nPersonas con la altura por debajo del promedio: " + less);
+                break;
+
+            case 7:
+                System.out.println("Introduce un número positivo (Si es muy grande mejor).");
+                num = a.nextInt();
+
+                for(int i=0;i<)
         }
     }
 }
