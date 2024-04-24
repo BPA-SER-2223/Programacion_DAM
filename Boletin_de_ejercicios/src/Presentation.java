@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Scanner;
 
 public class Presentation {
 
@@ -13,20 +14,35 @@ public class Presentation {
         //People.male(peoples);
         //People.woman(peoples);
 
-        List<Enero> eneros = new ArrayList<Enero>();
-        List<Integer> temperatures = new ArrayList<>();
-        List<String> weekDays = new ArrayList<String>();
-        weekDays.add("Lunes");
-        weekDays.add("Martes");
-        weekDays.add("Miercoles");
-        weekDays.add("Jueves");
-        weekDays.add("Viernes");
-        weekDays.add("Sabado");
-        weekDays.add("Domingo");
+        Scanner a = new Scanner(System.in);
 
-        Enero.writeTemperatures(eneros, temperatures);
+        switch (a.nextInt()){
+            case 1:
+                List<Enero> eneros = new ArrayList<>();
+                List<Integer> temperatures = new ArrayList<>();
+                List<String> weekDays = new ArrayList<>();
+                weekDays.add("Lunes");
+                weekDays.add("Martes");
+                weekDays.add("Miercoles");
+                weekDays.add("Jueves");
+                weekDays.add("Viernes");
+                weekDays.add("Sabado");
+                weekDays.add("Domingo");
 
-        eneros.get(0).seeTemperatures(temperatures, weekDays);
+                switch (a.nextInt()){
+                    case 1:
+                        Enero.writeTemperatures(eneros, temperatures);
+                    case 2:
+                        eneros.get(0).seeTemperatures(temperatures, weekDays);
+                    case 3:
+
+                }
+
+
+
+
+        }
+
 
 
 

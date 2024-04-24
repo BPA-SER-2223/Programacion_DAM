@@ -62,19 +62,14 @@ public class Main {
                     if(selection == 1){
                         ResultSet rs = stmt.executeQuery("SELECT * FROM vivienda");
                         ResultSetMetaData rsmd = rs.getMetaData();
-                        String encabezado = "";
-                        String contenido_id = "";
-                        String contenido_direction = "";
-                        String contenido_n_room = "";
-                        String contenido_price = "";
+                        String contenido_id;
+                        String contenido_direction;
+                        String contenido_n_room;
+                        String contenido_price;
 
-                        for(int i=0;i<rsmd.getColumnCount();i++){
-                            encabezado = encabezado + rsmd.getColumnName(i+1) + " \t\t ";
-                        }
-
-                        System.out.println("+----+---------------------------+------------------------+-------+");
-                        System.out.println("| ID | direccion                 | numero_habitaciones    | precio|");
-                        System.out.println("+----+---------------------------+------------------------+-------+");
+                        System.out.println("+----+---------------------------+------------------------+---------+");
+                        System.out.println("| ID | Direccion                 | Numero_habitaciones    | Precio  |");
+                        System.out.println("+----+---------------------------+------------------------+---------+");
 
                         while (rs.next()) {
                             contenido_id = rs.getString("identificador");
@@ -82,12 +77,13 @@ public class Main {
                             contenido_n_room = rs.getString("numero_habitaciones");
                             contenido_price = rs.getString("precio");
 
-                            System.out.format("| %2s | %-25s | %-22s | %5s |\n", contenido_id, contenido_direction, contenido_n_room, contenido_price);
+                            System.out.format("| %2s | %-25s | %-22s | %6s€ |\n", contenido_id, contenido_direction, contenido_n_room, contenido_price);
                         }
-                        System.out.println("+----+---------------------------+------------------------+-------+");
+                        System.out.println("+----+---------------------------+------------------------+---------+");
+                    }else{
+
                     }
             }
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
