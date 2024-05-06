@@ -8,7 +8,7 @@ public class Actions_db {
 
         if (yes == 0) {
             Scanner b = new Scanner(System.in);
-            System.out.print("¿Cual es el nombre la base de dato?");
+            System.out.println("¿Cual es el nombre la base de dato?");
             name = b.next();
 
             stmt.executeUpdate("CREATE DATABASE " + name + ";");
