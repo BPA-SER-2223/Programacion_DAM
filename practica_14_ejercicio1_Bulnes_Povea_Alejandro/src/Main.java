@@ -70,7 +70,8 @@ public class Main {
                                 selection = 0;
                         }
                     }catch (SQLException e){
-                        System.out.println("¡Vaya! Ha ocurrido algún error.");
+                        //System.out.println("¡Vaya! Ha ocurrido algún error.");
+                        e.getMessage();
                     }
                 }
             } catch (SQLException var14) {

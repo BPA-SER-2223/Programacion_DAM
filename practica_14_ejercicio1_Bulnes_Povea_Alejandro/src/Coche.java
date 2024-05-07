@@ -8,7 +8,10 @@ import java.util.Scanner;
 public class Coche {
     public static void createTable_Coche(Statement stmt, int yes_c) throws SQLException {
         if (yes_c == 0) {
-            stmt.executeUpdate("CREATE TABLE Coche(id INT PRIMARY KEY NOT NULL,numero_puertas INT NOT NULL,color VARCHAR(20));");
+            stmt.executeUpdate("CREATE TABLE Coche(id INT PRIMARY KEY NOT NULL," +
+                    "numero_puertas INT NOT NULL," +
+                    "color VARCHAR(20)," +
+                    "FOREIGN KEY(id) REFERENCES VEHICULO(id));");
             System.out.println("\nTabla Coche creada");
         } else {
             System.out.println("La tabla Coche ya ha sido creada");
@@ -35,17 +38,17 @@ public class Coche {
     public static void ShowTable_CocheyMotocicleta(Statement stmt, int yes_c, int yes_m) throws SQLException {
         if (yes_c > 0 && yes_m > 0) {
             System.out.println("Coche.");
-            ResultSet rs = stmt.executeQuery("SELECT * FROM Coche");
+            ResultSet rs = stmt.executeQuery("select v.marca , v.tipo, c.numero_puertas, c.color from vehiculo v inner join coche c where v.id = c.id;");
+            ResultSet rss = stmt.executeQuery("select v.marca , v.tipo, c.numero_puertas, c.color from vehiculo v inner join coche c where v.id = c.id;");
+
 
             String CC;
             while(rs.next()) {
-                String numeropuertas = rs.getString("numero_puertas");
-                CC = rs.getString("color");
+                int numeropuertas = rs.getInt("c.numero_puertas");
+                CC = rs.getString("c.color");
                 System.out.println("Número de puertas: " + numeropuertas + ", Color: " + CC);
             }
-
             System.out.println();
-            ResultSet rss = stmt.executeQuery("SELECT * FROM Motocicleta");
             System.out.println("Motocicleta.");
 
             while(rss.next()) {

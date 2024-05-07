@@ -7,7 +7,12 @@ import java.util.Scanner;
 public class Vehiculo {
     public static void createTable_Vehiculo(Statement stmt, int yes_v) throws SQLException {
         if (yes_v == 0) {
-            stmt.executeUpdate("CREATE TABLE Vehiculo(id INT AUTO_INCREMENT PRIMARY KEY,marca VARCHAR(20) NOT NULL,modelo VARCHAR(20) NOT NULL,año YEAR NOT NULL,tipo VARCHAR(20) NOT NULL);");
+            stmt.executeUpdate("CREATE TABLE Vehiculo(" +
+                    "id INT AUTO_INCREMENT PRIMARY KEY," +
+                    "marca VARCHAR(20) NOT NULL," +
+                    "modelo VARCHAR(20) NOT NULL," +
+                    "año YEAR NOT NULL," +
+                    "tipo VARCHAR(20) NOT NULL);");
             System.out.println("\nTabla Vehiculo creada");
         } else {
             System.out.println("La tabla Vehiculo ya ha sido creada");
@@ -25,7 +30,7 @@ public class Vehiculo {
             int vehiculo = a.nextInt();
             String type;
             if (vehiculo == 1) {
-                type = "Choce";
+                type = "Coche";
             } else {
                 type = "Motocicleta";
             }

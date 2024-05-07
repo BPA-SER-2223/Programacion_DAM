@@ -8,7 +8,10 @@ public class Motocicleta {
 
     public static void createTable_Motocicleta(Statement stmt, int yes_m) throws SQLException {
         if (yes_m == 0) {
-            stmt.executeUpdate("CREATE TABLE Motocicleta(id INT PRIMARY KEY NOT NULL,CC INT NOT NULL);");
+            stmt.executeUpdate("CREATE TABLE Motocicleta(" +
+                    "id INT PRIMARY KEY NOT NULL," +
+                    "CC INT NOT NULL," +
+                    "FOREIGN KEY(id) REFERENCES VEHICULO(id));");
             System.out.println("\nTabla Motocicleta creada");
         } else {
             System.out.println("La tabla Motocicleta ya ha sido creada");
