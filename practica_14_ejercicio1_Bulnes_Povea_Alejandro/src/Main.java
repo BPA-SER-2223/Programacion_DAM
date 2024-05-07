@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -11,7 +12,7 @@ public class Main {
         int yes_v = 0;
         int yes_m = 0;
         int yes_c = 0;
-        System.out.println("-----------------------------------------\n\t\tBienvenido a tu localhost!\n-----------------------------------------\n");
+        System.out.println("-----------------------------------------\n\t\tBienvenido a tu localhost\n-----------------------------------------\n");
         Connection conn = null;
         Statement stmt = null;
         int selection = 1;
@@ -23,10 +24,10 @@ public class Main {
             String PASS = a.nextLine();
             try {
                 conn = DriverManager.getConnection(URL, USER, PASS);
-                System.out.println("\nConexión exitosa con la base de datos");
+                System.out.println("\nConexión exitosa al localhost");
                 stmt = conn.createStatement();
                 while(selection != 0) {
-                    System.out.println("\n¿Que quieres hacer?\n\t1.-Craer la BBDD\n\t2.-Crear la tabla Vehículo\n\t3.-Crear la tabla Motocicleta\n\t4.-Crear la tabla Coche\n\t5.-Introducir datos en la tabla Vehículo\n\t6.-Introducir datos en la tabla Motocicleta\n\t7.-Introducir datos en la tabla Coche\n\t8.-Mostrar los datos de Vehículo\n\t9.-Mostrar todos los datos de Coche y Motocicleta\n\t10.Borrar un dato de una tabla\n\t11.Salir");
+                    System.out.println("\n¿Que quieres hacer?\n\t1.-Crear o elige la BBDD\n\t2.-Crear la tabla Vehículo\n\t3.-Crear la tabla Motocicleta\n\t4.-Crear la tabla Coche\n\t5.-Introducir datos en la tabla Vehículo\n\t6.-Introducir datos en la tabla Motocicleta\n\t7.-Introducir datos en la tabla Coche\n\t8.-Mostrar los datos de Vehículo\n\t9.-Mostrar todos los datos de Coche y Motocicleta\n\t10.Borrar un dato de una tabla\n\t11.Salir");
                     selection = a.nextInt();
                     try {
                         switch (selection) {
